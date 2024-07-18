@@ -7,7 +7,7 @@ import ErrorPage from "./pages/errorPage";
 export default function App() {
   return (
     <>
-      <div className="mb-[6rem]">
+      <div className="mb-[4.5rem]">
         <NavBar />
       </div>
 

@@ -1,6 +1,8 @@
-import { faBell, faSearch, faShoppingCart, faUser } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { alpha, InputBase, styled } from '@mui/material';
+import SearchIcon from '@mui/icons-material/Search';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -45,7 +47,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export function NavBar() {
     return (
-        <nav className="bg-primary fixed w-full left-0 top-0 z-50 text-white flex items-center justify-between p-4">
+        <nav className="bg-primary fixed w-full left-0 top-0 z-[100000] text-white flex items-center justify-between p-4">
             <div className="flex items-center ms-12 me-6">
                 <img src="/logo.jpeg" alt="AgroBoli" className="h-10 w-10 mr-2 rounded-full" />
                 <span className="text-xl font-bold">AgroBoli</span>
@@ -54,7 +56,7 @@ export function NavBar() {
             <div className="flex-1 mx-4">
                 <Search>
                     <SearchIconWrapper>
-                        <FontAwesomeIcon icon={faSearch} className="h-5 w-5" />
+                        <SearchIcon />
                     </SearchIconWrapper>
                     <StyledInputBase
                         placeholder="Search…"
@@ -65,13 +67,13 @@ export function NavBar() {
 
             <div className="flex items-center space-x-4 me-12 ms-6">
                 <div className="relative">
-                    <FontAwesomeIcon icon={faBell} className="h-6 w-6" />
+                    <NotificationsIcon />
                     <span className="absolute -top-2 -right-2 bg-red-600 text-white rounded-full text-xs px-1">
                         16
                     </span>
                 </div>
-                <FontAwesomeIcon icon={faShoppingCart} className="h-6 w-6" />
-                <FontAwesomeIcon icon={faUser} className="h-6 w-6" />
+                <ShoppingCartIcon />
+                <AccountCircleIcon />
             </div>
         </nav>
     );

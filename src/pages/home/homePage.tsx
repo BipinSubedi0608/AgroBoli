@@ -1,4 +1,5 @@
 import { ProductCard } from "../../components/home/productCard";
+import { SideBar } from "../../components/home/sidebar";
 import { ProductCardPropModel } from "../../models/propModels";
 
 const products: ProductCardPropModel[] = [
@@ -55,18 +56,24 @@ const products: ProductCardPropModel[] = [
 
 export default function HomePage() {
     return (
-        <div className="container mx-auto p-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg-grid-cols-4 gap-4">
-                {products.map((item, index) => (
-                    <ProductCard
-                        key={index}
-                        imageString={item.imageString}
-                        title={item.title}
-                        highestBid={item.highestBid}
-                        location={item.location}
-                        deadlineUnixTime={item.deadlineUnixTime}
-                    />
-                ))}
+        <div className="flex flex-row absolute left-0 w-screen">
+            <div className="hidden lg:block relative basis-1/4 mr-6">    
+                <SideBar />
+            </div>
+
+            <div className="container mx-auto flex mt-6 justify-center">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    {products.map((item, index) => (
+                        <ProductCard
+                            key={index}
+                            imageString={item.imageString}
+                            title={item.title}
+                            highestBid={item.highestBid}
+                            location={item.location}
+                            deadlineUnixTime={item.deadlineUnixTime}
+                        />
+                    ))}
+                </div>
             </div>
         </div>
     );

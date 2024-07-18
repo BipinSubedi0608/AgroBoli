@@ -7,7 +7,7 @@ export function ProductCard(props: ProductCardPropModel) {
     const { imageString, title, deadlineUnixTime, highestBid, location } = props;
 
     return (
-        <Card raised className='max-w-xs'>
+        <Card raised className='w-full sm:w-full md:w-full lg:w-64 xl:64'>
 
             {/* Product Image */}
             <CardMedia
