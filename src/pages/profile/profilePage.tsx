@@ -1,7 +1,7 @@
-export default function HomePage() {
+export default function ProfilePage() {
     return (
         <h1 className="text-3xl text-red-500">
-            HomePage
+            ProfilePage
         </h1>
     );
 }

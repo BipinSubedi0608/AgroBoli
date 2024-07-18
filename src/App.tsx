@@ -1,21 +1,26 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { NavBar } from "./components/global/navbar";
-import HomePage from "./pages/home";
-import SettingsPage from "./pages/settings";
-import ErrorPage from "./pages/error";
+import HomePage from "./pages/home/homePage";
+import SettingsPage from "./pages/profile/profilePage";
+import ErrorPage from "./pages/errorPage";
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <NavBar />
-      <Routes>
-        <Route path="/settings" element={<SettingsPage />} />
-        <Route path="/home" element={<Navigate to="/" />} />
+    <>
+      <div className="mb-[6rem]">
+        <NavBar />
+      </div>
 
-        <Route path="/" element={<HomePage />} />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/settings" element={<SettingsPage />} />
+          <Route path="/home" element={<Navigate to="/" />} />
 
-        <Route path="*" element={<ErrorPage />} />
-      </Routes>
-    </BrowserRouter>
+          <Route path="/" element={<HomePage />} />
+
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }

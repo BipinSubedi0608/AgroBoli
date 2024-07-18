@@ -45,7 +45,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export function NavBar() {
     return (
-        <nav className="bg-primary text-white flex items-center justify-between p-4">
+        <nav className="bg-primary fixed w-full left-0 top-0 z-50 text-white flex items-center justify-between p-4">
             <div className="flex items-center ms-12 me-6">
                 <img src="/logo.jpeg" alt="AgroBoli" className="h-10 w-10 mr-2 rounded-full" />
                 <span className="text-xl font-bold">AgroBoli</span>
